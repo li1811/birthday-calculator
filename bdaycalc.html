@@ -39,7 +39,7 @@
             showResult.innerText = ""; // clearing the results field 
 
             //make sure the user has input a date
-            if (birthDateInput.value === null) {
+            if (birthDateInput.value == "") {
                 showResult.innerText = "You need to select a birth date!";
                 return;
             }
@@ -59,7 +59,7 @@
             if (birthday.getMonth() == today.getMonth() && birthday.getDate() == today.getDate()) {
                 showResult.innerText = "🎈🎉 Happy Birthday!! 🎉🎈\n\n";
             }
-            
+
             showResult.innerText += `Seconds: ${seconds}\n\nMinutes: ${minutes}\n\nHours: ${hours}\n\nDays: ${days}\n\nMonths: ${months}\n\nYears: ${years}`; // Update the HTML to display the result
         }
     </script>
