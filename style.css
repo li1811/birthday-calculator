@@ -1,0 +1,84 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Soft light blue background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+h1 {
+    font-size: 30px;
+    color: #333;
+    margin-top: 30px; /* Space from the top of the page */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Container for form content */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Fixed width for form container */
+    text-align: center;
+    margin-top: 40px; /* Space between header and form */
+}
+
+/* Label and input field styling */
+label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space between the input and button */
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Adds space between the button and result */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Result styling */
+#result {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+    font-weight: bold;
+}

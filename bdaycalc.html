@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age in Days Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>How long since your birth?</h1>
+
+    <div id="maincontainer">
+        <!-- Birthdate input -->
+        <label for="birthdate">Enter your birthdate:</label>
+        <input type="date" id="birthdate">
+
+        <!-- Button to trigger calculation -->
+        <button id="startbutton" onclick="runCalc()">Calculate</button>
+
+        <!-- Display result -->
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+        // Grabbing html elements
+        let birthDateInput = document.getElementById("birthdate");
+        let button = document.getElementById("startbutton");
+        let showResult = document.getElementById("result");
+
+        // Initialize today's date
+        let today = new Date();
+
+        console.log(today.getDate());
+        console.log(today.getDay());
+        
+
+        function runCalc() {
+            showResult.innerText = ""; // clearing the results field 
+
+            //make sure the user has input a date
+            if (birthDateInput.value === null) {
+                showResult.innerText = "You need to select a birth date!";
+                return;
+            }
+
+            let birthday = new Date(birthDateInput.value); // Convert the value of the birthDateInput element to a date format
+
+            // today - birthday gives us the result in milliseconds, so we need to convert it to all the other units
+            let result = today - birthday;
+            let seconds = Math.floor(result / 1000);
+            let minutes = Math.floor(seconds / 60);
+            let hours = Math.floor(minutes / 60);
+            let days = Math.floor(hours / 24);
+            let years = Math.floor(days / 365);
+            let months = Math.floor(years * 12);
+
+            // I check if today is the users birthday and give them a little birthday surprise
+            if (birthday.getMonth() == today.getMonth() && birthday.getDate() == today.getDate()) {
+                showResult.innerText = "🎈🎉 Happy Birthday!! 🎉🎈\n\n";
+            }
+            
+            showResult.innerText += `Seconds: ${seconds}\n\nMinutes: ${minutes}\n\nHours: ${hours}\n\nDays: ${days}\n\nMonths: ${months}\n\nYears: ${years}`; // Update the HTML to display the result
+        }
+    </script>
+</body>
+</html>
